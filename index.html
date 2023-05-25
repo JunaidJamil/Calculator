@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+
+.wrap{
+    /* border: 1px solid black; */
+    height: 350px;
+    width: 200px;
+  
+    /* text-align: center; */
+}
+.screen
+{
+    /* border: 1px solid black; */
+    width: 200px;
+    height: 30px;
+    color: white;
+}
+button{
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    text-align: center;
+}
+
+
+
+.eql{
+    width: 136px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="player">Calculater</h1>
+    <div class="wrap">
+        <div class="screen">
+            <div id="result"></div>
+        </div>
+        <div class="container">
+            <div id="buttons">
+                <button onclick="clearNum()">C</button>
+                <button onclick="clearNum()">AC</button>
+                <button onclick="getNum('/')">/</button>
+                <button onclick="getNum('*')">*</button>
+                <button onclick="getNum(9)">9</button>
+                <button onclick="getNum(8)">8</button>
+                <button onclick="getNum(7)">7</button>
+                <button onclick="getNum('+')">+</button>
+                <button onclick="getNum(6)">6</button>
+                <button onclick="getNum(5)">5</button>
+                <button onclick="getNum(4)">4</button>
+                <button onclick="getNum('-')">-</button>
+                <button onclick="getNum(3)">3</button>
+                <button onclick="getNum(2)">2</button>
+                <button onclick="getNum(1)">1</button>
+                <button onclick="getNum('.')">.</button>
+                <button onclick="getNum(0)">0</button>
+                <button id="equals" onclick="calculate()" class="eql">=</button>
+            </div>
+        </div>
+        </div>
+    </div>
+<script>
+    
+	document.getElementById("equals").addEventListener('click', calculate);
+	function getNum(num){
+		var result = document.getElementById("result").innerText +=  num
+	}
+	function clearNum(){
+		var result = document.getElementById("result").innerText= ""
+	}
+	function calculate(){
+		var calc = document.getElementById("result");
+		calc.innerHTML = eval(calc.innerHTML);
+	}
+	
+
+</script>
+
+
+
+
+</body>
+</html>
